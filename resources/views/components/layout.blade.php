@@ -22,14 +22,19 @@
                 <img src="../CSS/sis-logo.png" width="50" height="40" alt="logo" > SIS
             </div>
             <div class="list-group list-group-flush my-3">
-                <a href="/dash" class="list-group-item list-group-item-action bg-transparent second-text fw-bold ">
-                    <i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <a href="/" class="list-group-item list-group-item-action bg-transparent second-text fw-bold active">
-                    <i class="fas fa-user-graduate me-2"></i>Students</a>
-                <a href="/course" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-thin fa-scroll me-2"></i>Courses</a>
-                    <a href="/users" class="list-group-item list-group-item-action bg-transparent second-text fw-bold active">
-                    <i class="fas fa-users fa-scroll me-2"></i>Users</a>
+                <a href="/dash" class="list-group-item list-group-item-action bg-transparent second-text fw-bold {{ request()->is('dash') ? 'active' : '' }}">
+                    <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                </a>
+                <a href="/" class="list-group-item list-group-item-action bg-transparent second-text fw-bold {{ request()->is('/') ? 'active' : '' }}">
+                    <i class="fas fa-user-graduate me-2"></i>Students
+                </a>
+                <a href="/course" class="list-group-item list-group-item-action bg-transparent second-text fw-bold {{ request()->is('course') ? 'active' : '' }}">
+                    <i class="fas fa-thin fa-scroll me-2"></i>Courses
+                </a>
+                <a href="/users" class="list-group-item list-group-item-action bg-transparent second-text fw-bold {{ request()->is('users') ? 'active' : '' }}">
+                    <i class="fas fa-users fa-scroll me-2"></i>Users
+                </a>
+
 
             </div>
         </div>
