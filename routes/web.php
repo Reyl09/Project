@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\authController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CourseController;
@@ -22,12 +23,16 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/dash', [DashboardController::class, 'index'])->name('dashboard.index');
+//login user
+Route::get('/', [authController::class, 'login'])->name('login');
+Route::post('/', [authController::class, 'loginAuth'])->name('login');
+Route::get('/logout', [authController::class, 'logout'])->name('logout');
+Route::get('/dashboard/index', [DashboardController::class, 'index'])->name('dashboard.index');
 
 
 
 //List of Students
-Route::get('/', [StudentController::class, 'index']);
+Route::get('/students', [StudentController::class, 'index']);
 
 //Show create student
 Route::get('/students/create', [StudentController::class, 'create']);
