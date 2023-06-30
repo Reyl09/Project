@@ -1,11 +1,9 @@
-@extends('layout')
-
-@section('content')
+<x-layout>
     <div class="container-fluid">
-<h3 class="fs-4 mb-3 col">
-    {{ $heading }}
-</h3>
-@unless (count($course) == 0)
+        @include('partials._search')
+        @include("partials._addCrsBtn")
+
+        @unless (count($course) == 0)
         <table class="table bg-white rounded shadow-sm  table-hover">
             <thead class="text-center">
                 <tr>
@@ -24,18 +22,9 @@
                         <td>{{ $viewCourse->created_at}}</td>
                         <td>{{ $viewCourse->course}}</td>
                         <td>{{ $viewCourse->description}}</td>
-                        {{-- <div class="dropdown">
-                            <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                             Action
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item"  href="ViewCourses.html">View</a></li>
-                                <li><a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#EditCourse">Edit</a></li>
-                              <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#DelCourse">Delete</a></li>
-                            </ul>
-                          </div> --}}
+
                           <td>
-                            <a class="btn btn-light" href="/course/{{ $viewCourse->id}}" role="button">View</a>
+                            @include('partials._actCrsBtn')
                         </td>
                     </tr>
                 </a>
@@ -48,4 +37,4 @@
     <p>Not Found</p>
 @endunless
     </div>
-@endsection
+</x-layout>

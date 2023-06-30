@@ -10,24 +10,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.css">
     <link rel="stylesheet" href="../CSS/style.css" />
     <link rel = "icon" href = "../CSS/sis-logo.png" type = "image/x-icon">
+    <script src="//unpkg.com/alpinejs" defer></script>
     <title>Dashboard</title>
 </head>
 
 <body>
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
-        <div class="bg-white" id="sidebar-wrapper">
+        <div class="bg-white toggle-sidebar" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
                 <img src="../CSS/sis-logo.png" width="50" height="40" alt="logo" > SIS
             </div>
             <div class="list-group list-group-flush my-3">
-                <a href="../Dashboard.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold ">
+                <a href="/dash" class="list-group-item list-group-item-action bg-transparent second-text fw-bold ">
                     <i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
                 <a href="/" class="list-group-item list-group-item-action bg-transparent second-text fw-bold active">
                     <i class="fas fa-user-graduate me-2"></i>Students</a>
-                <a href="/Course" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <a href="/course" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                     <i class="fas fa-thin fa-scroll me-2"></i>Courses</a>
-                <a href="../Users.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <a href="/users" class="list-group-item list-group-item-action bg-transparent second-text fw-bold active">
                     <i class="fas fa-users fa-scroll me-2"></i>Users</a>
 
             </div>
@@ -39,7 +40,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Students</h2>
+                    <h2 class="fs-2 m-0"></h2>
                 </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -52,10 +53,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user me-2"></i>{ Admin }
+                                <i class="fas fa-user me-2"></i>Admin
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#user">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Logout</a></li>
                             </ul>
                         </li>
@@ -64,10 +64,13 @@
 
             </nav>
     {{-- View output --}}
-    @yield('content')
+   {{$slot}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.js"></script>
+
 
     <script src="../Js/functions.js"></script>
+    <x-flash-message/>
  </body>
 
  </html>

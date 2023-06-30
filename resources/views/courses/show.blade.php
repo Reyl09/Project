@@ -1,9 +1,7 @@
-@extends('layout')
-
-@section('content')
+<x-layout>
 <div class="container-fluid row my-5">
     <div class="input-group rounded row">
-        <h3 class="fs-4 mb-3 col">Students who are enrolled in </h3>
+        <h3 class="fs-4 mb-3 col">Students who are enrolled in: {{ $course->course }} </h3>
         <div class="col-12 col-lg-3">
             <div class="col mt-2 mb-3">
                 <input type="search" v-model="search" @input="searchStud(search)" class="form-control border" placeholder="Search">
@@ -12,7 +10,7 @@
     </div>
 
     <div class="container">
-        <table class="table bg-white rounded shadow-sm  table-hover">
+        <x-table>
             <thead class="text-center">
                 <tr>
                     <th scope="col" width="50">#</th>
@@ -25,7 +23,7 @@
                 </tr>
             </thead>
             <tbody id="tbl" class="text-center">
-                <tr v-for="stud in studs">
+                <tr>
                     <td>{{ $st_details->id }}</td>
                     <td>{{ $st_details->created_at}}</td>
                     <td>{{$st_details->student_id}}</td>
@@ -44,7 +42,7 @@
 
                 </tr>
             </tbody>
-        </table>
+        </x-table>
     </div>
 </div>
-@endsection
+</x-layout>
