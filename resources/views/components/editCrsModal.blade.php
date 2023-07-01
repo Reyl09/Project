@@ -19,8 +19,6 @@
                         <input class="form-control"  required name="description" value="{{ $viewCourse->description }}">
                     </div>
 
-
-
                 <button type="submit" class="btn btn-outline-secondary float-end mt-3 me-2" data-bs-dismiss="modal">Cancel</button>
                 <button type="submit" class="btn btn-info float-end mt-3 me-2">Add</button>
             </form>

@@ -10,7 +10,6 @@
             {{ $st_details->middlename}}
         </td>
         <td>{{ $st_details->course}}</td>
-
         <td>
             <a class="btn btn-light" href="/students/{{ $st_details->id}}" role="button">View</a>
         </td>

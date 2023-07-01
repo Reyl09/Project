@@ -34,8 +34,6 @@
                 <a href="/users" class="list-group-item list-group-item-action bg-transparent second-text fw-bold {{ request()->is('users') ? 'active' : '' }}">
                     <i class="fas fa-users fa-scroll me-2"></i>Users
                 </a>
-
-
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -66,14 +64,11 @@
                         </li>
                     </ul>
                 </div>
-
             </nav>
     {{-- View output --}}
    {{$slot}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.js"></script>
-
-
     <script src="../Js/functions.js"></script>
     <x-flash-message/>
  </body>

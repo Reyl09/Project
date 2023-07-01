@@ -1,6 +1,4 @@
 @props(['st_details'])
-
-
 <form>
     <div class="row mb-3">
         <div class="col-4">
@@ -36,11 +34,9 @@
             {{ $st_details->email}}
 
         </div>
-
     </div>
     <label for="" class="fw-bold">Address</label><br>
     {{ $st_details->address}}
-
 </form>
 </div><hr>
 
